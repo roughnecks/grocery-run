@@ -23,7 +23,7 @@ import java.time.LocalDate
 // privacy-first approach.
 @Database(
     entities = [Food::class, Shelf::class, Recipe::class, MenuEntry::class, RecipeIngredient::class],
-    version = 5,
+    version = 6,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -114,6 +114,14 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        // Add missing foreign key indices for foods.shelfId and menu_entries.recipeId
+        private val MIGRATION_5_6 = object : Migration(5, 6) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("CREATE INDEX IF NOT EXISTS `index_foods_shelfId` ON `foods` (`shelfId`)")
+                db.execSQL("CREATE INDEX IF NOT EXISTS `index_menu_entries_recipeId` ON `menu_entries` (`recipeId`)")
+            }
+        }
+
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
@@ -124,7 +132,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     DATABASE_NAME
                 )
-                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6)
                     .build()
                 INSTANCE = instance
                 instance

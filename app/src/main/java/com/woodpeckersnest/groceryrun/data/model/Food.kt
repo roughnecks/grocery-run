@@ -2,6 +2,7 @@ package com.woodpeckersnest.groceryrun.data.model
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
 // A single food item in the master ("All Items") list.
@@ -18,7 +19,8 @@ import androidx.room.PrimaryKey
             childColumns = ["shelfId"],
             onDelete = ForeignKey.SET_NULL
         )
-    ]
+    ],
+    indices = [Index(value = ["shelfId"])]
 )
 data class Food(
     @PrimaryKey(autoGenerate = true)

@@ -2,6 +2,7 @@ package com.woodpeckersnest.groceryrun.data.model
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
 // Links a recipe to a specific date within the menu.
@@ -18,7 +19,8 @@ import androidx.room.PrimaryKey
             childColumns = ["recipeId"],
             onDelete = ForeignKey.CASCADE
         )
-    ]
+    ],
+    indices = [Index(value = ["recipeId"])]
 )
 data class MenuEntry(
     @PrimaryKey(autoGenerate = true)
