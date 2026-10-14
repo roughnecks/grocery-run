@@ -2,6 +2,8 @@
 
 **Grocery Run** (*Fai la Spesa!*) is a privacy-first, offline-first grocery list and weekly meal planning application for Android. Built with modern Android development standards using **Jetpack Compose**, **Kotlin**, **Room**, and **Material 3**.
 
+A few screenshots (Android 9) can be found in the "media" folder.
+
 <img src="assets/groceryrun.png" width="250" alt="Grocery Run Logo">
 
 ## Privacy & Security First
