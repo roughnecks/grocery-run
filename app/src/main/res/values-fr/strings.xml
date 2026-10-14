@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Grocery Run</string>
+
+    <string name="tab_all_items">Liste</string>
+    <string name="tab_shopping_list">Panier</string>
+    <string name="tab_shelves">Rayons</string>
+    <string name="tab_recipes">Recettes</string>
+    <string name="tab_weekly_menu">Menu</string>
+
+    <string name="add_item_title">Ajouter un article</string>
+    <string name="item_name_label">Nom de l\'article</string>
+    <string name="price_label">Prix</string>
+    <string name="shelf_label">Rayon</string>
+    <string name="no_shelf">Aucun rayon</string>
+    <string name="add_action">Ajouter</string>
+    <string name="cancel_action">Annuler</string>
+    <string name="delete_action">Supprimer</string>
+    <string name="mark_purchased_action">Marquer comme acheté</string>
+
+    <string name="all_items_empty">Aucun article présent. Appuyez sur + pour en ajouter un.</string>
+    <string name="shopping_list_empty">La liste de courses est vide.</string>
+
+    <string name="add_shelf_title">Ajouter un rayon</string>
+    <string name="rename_shelf_title">Renommer le rayon</string>
+    <string name="edit_price_title">Modifier le prix</string>
+    <string name="shelf_name_label">Nom du rayon</string>
+    <string name="save_action">Enregistrer</string>
+    <string name="close_action">Fermer</string>
+    <string name="shelves_empty">Aucun rayon présent. Appuyez sur + pour en ajouter un.</string>
+    <string name="manage_products_action">Gérer les produits</string>
+    <string name="rename_action">Renommer</string>
+    <string name="shelf_products_title">Produits dans \"%1$s\"</string>
+
+    <string name="add_recipe_title">Ajouter une recette</string>
+    <string name="rename_recipe_title">Renommer la recette</string>
+    <string name="recipe_name_label">Nom de la recette</string>
+    <string name="recipes_empty">Aucune recette présente. Appuyez sur + pour en ajouter une.</string>
+
+    <string name="week_1">Semaine 1</string>
+    <string name="week_2">Semaine 2</string>
+    <string name="clear_week_action">Vider la semaine</string>
+    <string name="clear_day_action">Vider le jour</string>
+    <string name="day_empty">Aucune recette pour ce jour.</string>
+    <string name="add_recipe_to_day_title">Ajouter la recette au jour</string>
+
+    <string-array name="day_names">
+        <item>Lundi</item>
+        <item>Mardi</item>
+        <item>Mercredi</item>
+        <item>Jeudi</item>
+        <item>Vendredi</item>
+        <item>Samedi</item>
+        <item>Dimanche</item>
+    </string-array>
+
+    <string name="export_action">Exporter les données</string>
+    <string name="export_markdown_action">Exporter en Markdown</string>
+    <string name="import_action">Importer des données</string>
+    <string name="export_success">Sauvegarde enregistrée avec succès.</string>
+    <string name="markdown_export_success">Liste de courses exportée avec succès.</string>
+    <string name="shopping_total">Coût total</string>
+    <string name="info_action">Info</string>
+    <string name="shopping_list_title">Liste de courses</string>
+    <string name="price_format">%1$.2f %2$s</string>
+    <string name="item_quantity_price_format">%1$.2f %2$s (%3$d × %4$.2f %2$s)</string>
+    <string name="quantity_prefix">%1$dx </string>
+    <string name="add_to_cart_action">Ajouter au panier</string>
+    <string name="add_unit_action">Ajouter une unité</string>
+    <string name="remove_unit_action">Retirer une unité</string>
+    <string name="import_overwrite_warning">L\'importation remplacera TOUTES les données actuelles par le contenu du fichier de sauvegarde sélectionné. Cette action est irréversible. Continuer ?</string>
+    <string name="help_title">Aide et Info</string>
+    <string name="help_markdown_desc">📄 Exporter en Markdown : Enregistrez la liste actuelle sous forme de fichier texte.</string>
+    <string name="help_backup_desc">📥 Sauvegarde : Enregistrez une copie complète de toutes vos données.</string>
+    <string name="help_restore_desc">📤 Restauration : Importez une sauvegarde enregistrée précédemment.</string>
+    <string name="search_hint">Rechercher des articles&#8230;</string>
+    <string name="search_empty">Aucun article ne correspond à votre recherche.</string>
+    <string name="toggle_display_mode">Changer le mode d\'affichage</string>
+    <string name="clear_action">Effacer</string>
+    <string name="export_filename">grocery_run_backup.db</string>
+    <string name="export_markdown_filename">liste_de_courses.md</string>
+
+    <string name="language_action">Langue</string>
+    <string name="language_dialog_title">Sélectionner la langue</string>
+    <string name="language_system_default">Par défaut du système</string>
+    <string name="more_options_action">Plus d\'options</string>
+    <string name="go_to_today_action">Aujourd\'hui</string>
+
+    <string name="currency_action">Devise</string>
+    <string name="currency_dialog_title">Sélectionner la devise</string>
+    <string name="currency_auto_default">Par défaut (%1$s)</string>
+
+    <string name="manage_ingredients_action">Gérer les ingrédients</string>
+    <string name="ingredients_title">Ingrédients pour « %1$s »</string>
+    <string name="add_ingredient_hint">Ajouter le nom de l\'ingrédient&#8230;</string>
+    <string name="no_ingredients">Aucun ingrédient ajouté pour l\'instant.</string>
+
+    <string name="pref_auto_add_ingredients">Ajouter les ingrédients au panier</string>
+    <string name="add_ingredients_to_cart_title">Ajouter les ingrédients au panier ?</string>
+    <string name="add_ingredients_to_cart_desc">Sélectionnez les ingrédients à ajouter au panier pour %1$s :</string>
+    <string name="skip_action">Passer</string>
+    <string name="project_page_action">Page du projet</string>
+    <string name="app_version_format">Version %1$s</string>
+</resources>

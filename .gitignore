@@ -1,0 +1,46 @@
+# Built application files
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Files for the ART/DALVIK Virtual Machine
+*.dex
+
+# Java class files
+*.class
+
+# Generated build output
+/build/
+/bin/
+/gen/
+/out/
+app/build/
+
+# Gradle directory
+.gradle/
+
+# Local configuration file (contains SDK path) - NEVER COMMIT
+local.properties
+
+# Log files and crash dumps
+*.log
+
+# Android Studio / IntelliJ IDEA user-specific files
+.idea/
+*.iml
+*.iws
+
+# Kotlin compiler caches
+.kotlin/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Android NDK / C++ outputs
+.externalNativeBuild/
+.cxx/
+
+# Android Studio profiling captures
+/captures/

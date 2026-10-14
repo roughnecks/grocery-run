@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">Grocery Run</string>
+
+    <string name="tab_all_items">All Items</string>
+    <string name="tab_shopping_list">Runner</string>
+    <string name="tab_shelves">Shelves</string>
+    <string name="tab_recipes">Recipes</string>
+    <string name="tab_weekly_menu">Menu</string>
+
+    <string name="add_item_title">Add item</string>
+    <string name="item_name_label">Item name</string>
+    <string name="price_label">Price</string>
+    <string name="shelf_label">Shelf</string>
+    <string name="no_shelf">No shelf</string>
+    <string name="add_action">Add</string>
+    <string name="cancel_action">Cancel</string>
+    <string name="delete_action">Delete</string>
+    <string name="mark_purchased_action">Mark as purchased</string>
+
+    <string name="all_items_empty">No items present. Tap + to add one.</string>
+    <string name="shopping_list_empty">The shopping list is empty.</string>
+
+    <string name="add_shelf_title">Add shelf</string>
+    <string name="rename_shelf_title">Rename shelf</string>
+    <string name="edit_price_title">Edit price</string>
+    <string name="shelf_name_label">Shelf name</string>
+    <string name="save_action">Save</string>
+    <string name="close_action">Close</string>
+    <string name="shelves_empty">No shelves present. Tap + to add one.</string>
+    <string name="manage_products_action">Manage products</string>
+    <string name="rename_action">Rename</string>
+    <string name="shelf_products_title">Products on \"%1$s\"</string>
+
+    <string name="add_recipe_title">Add recipe</string>
+    <string name="rename_recipe_title">Rename recipe</string>
+    <string name="recipe_name_label">Recipe name</string>
+    <string name="recipes_empty">No recipes present. Tap + to add one.</string>
+
+    <string name="week_1">Week 1</string>
+    <string name="week_2">Week 2</string>
+    <string name="clear_week_action">Clear week</string>
+    <string name="clear_day_action">Clear day</string>
+    <string name="day_empty">No recipe for this day.</string>
+    <string name="add_recipe_to_day_title">Add recipe to day</string>
+
+    <string-array name="day_names">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
+    <string name="export_action">Export data</string>
+    <string name="export_markdown_action">Export to Markdown</string>
+    <string name="import_action">Import data</string>
+    <string name="export_success">Backup saved successfully.</string>
+    <string name="markdown_export_success">Shopping list exported successfully.</string>
+    <string name="shopping_total">Total cost</string>
+    <string name="info_action">Info</string>
+    <string name="shopping_list_title">Shopping List</string>
+    <string name="price_format">%1$.2f %2$s</string>
+    <string name="item_quantity_price_format">%1$.2f %2$s (%3$d × %4$.2f %2$s)</string>
+    <string name="quantity_prefix">%1$dx </string>
+    <string name="add_to_cart_action">Add to cart</string>
+    <string name="add_unit_action">Add unit</string>
+    <string name="remove_unit_action">Remove unit</string>
+    <string name="import_overwrite_warning">Importing will replace ALL current data with the content of the selected backup file. This cannot be undone. Continue?</string>
+    <string name="help_title">Help &amp; Info</string>
+    <string name="help_markdown_desc">📄 Export Markdown: Save the current list as a text file.</string>
+    <string name="help_backup_desc">📥 Backup: Save a full copy of all your data.</string>
+    <string name="help_restore_desc">📤 Restore: Import a previously saved backup.</string>
+    <string name="search_hint">Search items&#8230;</string>
+    <string name="search_empty">No items match your search.</string>
+    <string name="toggle_display_mode">Toggle display mode</string>
+    <string name="clear_action">Clear</string>
+    <string name="export_filename">grocery_run_backup.db</string>
+    <string name="export_markdown_filename">shopping_list.md</string>
+
+    <string name="language_action">Language</string>
+    <string name="language_dialog_title">Select Language</string>
+    <string name="language_system_default">System default</string>
+    <string name="more_options_action">More options</string>
+    <string name="go_to_today_action">Today</string>
+
+    <string name="currency_action">Currency</string>
+    <string name="currency_dialog_title">Select Currency</string>
+    <string name="currency_auto_default">Default (%1$s)</string>
+
+    <string name="manage_ingredients_action">Manage ingredients</string>
+    <string name="ingredients_title">Ingredients for \"%1$s\"</string>
+    <string name="add_ingredient_hint">Add ingredient name&#8230;</string>
+    <string name="no_ingredients">No ingredients added yet.</string>
+
+    <string name="pref_auto_add_ingredients">Add recipe ingredients to cart</string>
+    <string name="add_ingredients_to_cart_title">Add ingredients to cart?</string>
+    <string name="add_ingredients_to_cart_desc">Select ingredients to add to cart for %1$s:</string>
+    <string name="skip_action">Skip</string>
+    <string name="project_page_action">Project Page</string>
+    <string name="app_version_format">Version %1$s</string>
+</resources>

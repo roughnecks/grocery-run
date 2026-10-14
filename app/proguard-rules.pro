@@ -1,0 +1,1 @@
+# No custom rules needed - release build has minification disabled.

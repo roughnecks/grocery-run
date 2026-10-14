@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Grocery Run</string>
+
+    <string name="tab_all_items">Lista</string>
+    <string name="tab_shopping_list">Carrito</string>
+    <string name="tab_shelves">Estantes</string>
+    <string name="tab_recipes">Recetas</string>
+    <string name="tab_weekly_menu">Menú</string>
+
+    <string name="add_item_title">Añadir artículo</string>
+    <string name="item_name_label">Nombre del artículo</string>
+    <string name="price_label">Precio</string>
+    <string name="shelf_label">Estante</string>
+    <string name="no_shelf">Sin estante</string>
+    <string name="add_action">Añadir</string>
+    <string name="cancel_action">Cancelar</string>
+    <string name="delete_action">Eliminar</string>
+    <string name="mark_purchased_action">Marcar como comprado</string>
+
+    <string name="all_items_empty">No hay artículos presentes. Toca + para añadir uno.</string>
+    <string name="shopping_list_empty">La lista de la compra está vacía.</string>
+
+    <string name="add_shelf_title">Añadir estante</string>
+    <string name="rename_shelf_title">Renombrar estante</string>
+    <string name="edit_price_title">Editar precio</string>
+    <string name="shelf_name_label">Nombre del estante</string>
+    <string name="save_action">Guardar</string>
+    <string name="close_action">Cerrar</string>
+    <string name="shelves_empty">No hay estantes presentes. Toca + para añadir uno.</string>
+    <string name="manage_products_action">Gestionar productos</string>
+    <string name="rename_action">Renombrar</string>
+    <string name="shelf_products_title">Productos en \"%1$s\"</string>
+
+    <string name="add_recipe_title">Añadir receta</string>
+    <string name="rename_recipe_title">Renombrar receta</string>
+    <string name="recipe_name_label">Nombre de la receta</string>
+    <string name="recipes_empty">No hay recetas presentes. Toca + para añadir una.</string>
+
+    <string name="week_1">Semana 1</string>
+    <string name="week_2">Semana 2</string>
+    <string name="clear_week_action">Vaciar semana</string>
+    <string name="clear_day_action">Vaciar día</string>
+    <string name="day_empty">Sin receta para este día.</string>
+    <string name="add_recipe_to_day_title">Añadir receta al día</string>
+
+    <string-array name="day_names">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miércoles</item>
+        <item>Jueves</item>
+        <item>Viernes</item>
+        <item>Sábado</item>
+        <item>Domingo</item>
+    </string-array>
+
+    <string name="export_action">Exportar datos</string>
+    <string name="export_markdown_action">Exportar a Markdown</string>
+    <string name="import_action">Importar datos</string>
+    <string name="export_success">Copia de seguridad guardada con éxito.</string>
+    <string name="markdown_export_success">Lista de la compra exportada con éxito.</string>
+    <string name="shopping_total">Coste total</string>
+    <string name="info_action">Info</string>
+    <string name="shopping_list_title">Lista de la compra</string>
+    <string name="price_format">%1$.2f %2$s</string>
+    <string name="item_quantity_price_format">%1$.2f %2$s (%3$d × %4$.2f %2$s)</string>
+    <string name="quantity_prefix">%1$dx </string>
+    <string name="add_to_cart_action">Añadir al carrito</string>
+    <string name="add_unit_action">Añadir unidad</string>
+    <string name="remove_unit_action">Quitar unidad</string>
+    <string name="import_overwrite_warning">La importación reemplazará TODOS los datos actuales con el contenido del archivo de copia de seguridad seleccionado. Esto no se puede deshacer. ¿Continuar?</string>
+    <string name="help_title">Ayuda e Info</string>
+    <string name="help_markdown_desc">📄 Exportar Markdown: Guarda la lista actual como un archivo de texto.</string>
+    <string name="help_backup_desc">📥 Copia de seguridad: Guarda una copia completa de todos tus datos.</string>
+    <string name="help_restore_desc">📤 Restaurar: Importa una copia de seguridad guardada previamente.</string>
+    <string name="search_hint">Buscar artículos&#8230;</string>
+    <string name="search_empty">Ningún artículo coincide con la búsqueda.</string>
+    <string name="toggle_display_mode">Cambiar modo de visualización</string>
+    <string name="clear_action">Limpiar</string>
+    <string name="export_filename">grocery_run_backup.db</string>
+    <string name="export_markdown_filename">lista_de_la_compra.md</string>
+
+    <string name="language_action">Idioma</string>
+    <string name="language_dialog_title">Seleccionar idioma</string>
+    <string name="language_system_default">Predeterminado del sistema</string>
+    <string name="more_options_action">Más opciones</string>
+    <string name="go_to_today_action">Hoy</string>
+
+    <string name="currency_action">Moneda</string>
+    <string name="currency_dialog_title">Seleccionar moneda</string>
+    <string name="currency_auto_default">Predeterminado (%1$s)</string>
+
+    <string name="manage_ingredients_action">Gestionar ingredientes</string>
+    <string name="ingredients_title">Ingredientes para \"%1$s\"</string>
+    <string name="add_ingredient_hint">Añadir nombre del ingrediente&#8230;</string>
+    <string name="no_ingredients">Aún no se han añadido ingredientes.</string>
+
+    <string name="pref_auto_add_ingredients">Añadir ingredientes de receta al carrito</string>
+    <string name="add_ingredients_to_cart_title">¿Añadir ingredientes al carrito?</string>
+    <string name="add_ingredients_to_cart_desc">Selecciona los ingredientes que añadir al carrito para %1$s:</string>
+    <string name="skip_action">Omitir</string>
+    <string name="project_page_action">Página del proyecto</string>
+    <string name="app_version_format">Versión %1$s</string>
+</resources>

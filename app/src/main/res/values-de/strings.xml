@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Grocery Run</string>
+
+    <string name="tab_all_items">Liste</string>
+    <string name="tab_shopping_list">Warenkorb</string>
+    <string name="tab_shelves">Regale</string>
+    <string name="tab_recipes">Rezepte</string>
+    <string name="tab_weekly_menu">Menü</string>
+
+    <string name="add_item_title">Artikel hinzufügen</string>
+    <string name="item_name_label">Artikelname</string>
+    <string name="price_label">Preis</string>
+    <string name="shelf_label">Regal</string>
+    <string name="no_shelf">Kein Regal</string>
+    <string name="add_action">Hinzufügen</string>
+    <string name="cancel_action">Abbrechen</string>
+    <string name="delete_action">Löschen</string>
+    <string name="mark_purchased_action">Als gekauft markieren</string>
+
+    <string name="all_items_empty">Keine Artikel vorhanden. Tippe auf +, um einen hinzuzufügen.</string>
+    <string name="shopping_list_empty">Die Einkaufsliste ist leer.</string>
+
+    <string name="add_shelf_title">Regal hinzufügen</string>
+    <string name="rename_shelf_title">Regal umbenennen</string>
+    <string name="edit_price_title">Preis bearbeiten</string>
+    <string name="shelf_name_label">Regalname</string>
+    <string name="save_action">Speichern</string>
+    <string name="close_action">Schließen</string>
+    <string name="shelves_empty">Keine Regale vorhanden. Tippe auf +, um eins hinzuzufügen.</string>
+    <string name="manage_products_action">Produkte verwalten</string>
+    <string name="rename_action">Umbenennen</string>
+    <string name="shelf_products_title">Produkte in \"%1$s\"</string>
+
+    <string name="add_recipe_title">Rezept hinzufügen</string>
+    <string name="rename_recipe_title">Rezept umbenennen</string>
+    <string name="recipe_name_label">Rezeptname</string>
+    <string name="recipes_empty">Keine Rezepte vorhanden. Tippe auf +, um eins hinzuzufügen.</string>
+
+    <string name="week_1">Woche 1</string>
+    <string name="week_2">Woche 2</string>
+    <string name="clear_week_action">Woche leeren</string>
+    <string name="clear_day_action">Tag leeren</string>
+    <string name="day_empty">Kein Rezept für diesen Tag.</string>
+    <string name="add_recipe_to_day_title">Rezept zum Tag hinzufügen</string>
+
+    <string-array name="day_names">
+        <item>Montag</item>
+        <item>Dienstag</item>
+        <item>Mittwoch</item>
+        <item>Donnerstag</item>
+        <item>Freitag</item>
+        <item>Samstag</item>
+        <item>Sonntag</item>
+    </string-array>
+
+    <string name="export_action">Daten exportieren</string>
+    <string name="export_markdown_action">Als Markdown exportieren</string>
+    <string name="import_action">Daten importieren</string>
+    <string name="export_success">Sicherung erfolgreich gespeichert.</string>
+    <string name="markdown_export_success">Einkaufsliste erfolgreich exportiert.</string>
+    <string name="shopping_total">Gesamtkosten</string>
+    <string name="info_action">Info</string>
+    <string name="shopping_list_title">Einkaufsliste</string>
+    <string name="price_format">%1$.2f %2$s</string>
+    <string name="item_quantity_price_format">%1$.2f %2$s (%3$d × %4$.2f %2$s)</string>
+    <string name="quantity_prefix">%1$dx </string>
+    <string name="add_to_cart_action">In den Warenkorb</string>
+    <string name="add_unit_action">Einheit hinzufügen</string>
+    <string name="remove_unit_action">Einheit entfernen</string>
+    <string name="import_overwrite_warning">Beim Importieren werden ALLE aktuellen Daten durch den Inhalt der ausgewählten Sicherungsdatei ersetzt. Dies kann nicht rückgängig gemacht werden. Fortfahren?</string>
+    <string name="help_title">Hilfe &amp; Info</string>
+    <string name="help_markdown_desc">📄 Markdown exportieren: Speichere die aktuelle Liste als Textdatei.</string>
+    <string name="help_backup_desc">📥 Sicherung: Speichere eine vollständige Kopie all deiner Daten.</string>
+    <string name="help_restore_desc">📤 Wiederherstellen: Importiere eine zuvor gespeicherte Sicherung.</string>
+    <string name="search_hint">Artikel suchen&#8230;</string>
+    <string name="search_empty">Keine Artikel entsprechen der Suche.</string>
+    <string name="toggle_display_mode">Anzeigemodus wechseln</string>
+    <string name="clear_action">Löschen</string>
+    <string name="export_filename">grocery_run_backup.db</string>
+    <string name="export_markdown_filename">einkaufsliste.md</string>
+
+    <string name="language_action">Sprache</string>
+    <string name="language_dialog_title">Sprache auswählen</string>
+    <string name="language_system_default">Systemstandard</string>
+    <string name="more_options_action">Weitere Optionen</string>
+    <string name="go_to_today_action">Heute</string>
+
+    <string name="currency_action">Währung</string>
+    <string name="currency_dialog_title">Währung auswählen</string>
+    <string name="currency_auto_default">Standard (%1$s)</string>
+
+    <string name="manage_ingredients_action">Zutaten verwalten</string>
+    <string name="ingredients_title">Zutaten für \"%1$s\"</string>
+    <string name="add_ingredient_hint">Zutatennamen hinzufügen&#8230;</string>
+    <string name="no_ingredients">Noch keine Zutaten hinzugefügt.</string>
+
+    <string name="pref_auto_add_ingredients">Rezeptzutaten in den Warenkorb</string>
+    <string name="add_ingredients_to_cart_title">Zutaten in den Warenkorb legen?</string>
+    <string name="add_ingredients_to_cart_desc">Wähle die Zutaten aus, die in den Warenkorb für %1$s gelegt werden sollen:</string>
+    <string name="skip_action">Überspringen</string>
+    <string name="project_page_action">Projektseite</string>
+    <string name="app_version_format">Version %1$s</string>
+</resources>

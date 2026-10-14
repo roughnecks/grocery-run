@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Foreground layer: a stylized sandwich, kept inside the safe
+     zone (inner 66dp circle) so it isn't clipped by round/squircle
+     icon masks on different launchers. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Bottom bun (light bread) -->
+    <path
+        android:fillColor="#E8B85C"
+        android:pathData="M26,60 L82,60 C82,71 73,78 54,78 C35,78 26,71 26,60 Z" />
+
+    <!-- Cheese layer -->
+    <path
+        android:fillColor="#F4C430"
+        android:pathData="M27,54 L81,54 L81,60 L27,60 Z" />
+
+    <!-- Tomato slices -->
+    <path
+        android:fillColor="#D94F3D"
+        android:pathData="M44,50 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+    <path
+        android:fillColor="#D94F3D"
+        android:pathData="M58,50 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+    <path
+        android:fillColor="#D94F3D"
+        android:pathData="M72,50 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+
+    <!-- Lettuce (wavy layer) -->
+    <path
+        android:fillColor="#6FAE4A"
+        android:pathData="M27,42 L33,46 L39,42 L45,46 L51,42 L57,46 L63,42 L69,46 L75,42 L81,46 L81,50 L27,50 Z" />
+
+    <!-- Top bread (crust triangle) -->
+    <path
+        android:fillColor="#D9A054"
+        android:pathData="M54,20 L80,42 L28,42 Z" />
+
+    <!-- Top bread highlight -->
+    <path
+        android:fillColor="#EFC17E"
+        android:pathData="M54,25 L72,40 L36,40 Z" />
+
+</vector>

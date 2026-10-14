@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fai la Spesa!</string>
+
+    <string name="tab_all_items">Lista</string>
+    <string name="tab_shopping_list">Carrello</string>
+    <string name="tab_shelves">Scaffali</string>
+    <string name="tab_recipes">Ricette</string>
+    <string name="tab_weekly_menu">Menù</string>
+
+    <string name="add_item_title">Aggiungi alimento</string>
+    <string name="item_name_label">Nome alimento</string>
+    <string name="price_label">Prezzo</string>
+    <string name="shelf_label">Scaffale</string>
+    <string name="no_shelf">Nessuno scaffale</string>
+    <string name="add_action">Aggiungi</string>
+    <string name="cancel_action">Annulla</string>
+    <string name="delete_action">Elimina</string>
+    <string name="mark_purchased_action">Segna come acquistato</string>
+
+    <string name="all_items_empty">Nessun alimento presente. Tocca + per aggiungerne uno.</string>
+    <string name="shopping_list_empty">La lista della spesa è vuota.</string>
+
+    <string name="add_shelf_title">Aggiungi scaffale</string>
+    <string name="rename_shelf_title">Rinomina scaffale</string>
+    <string name="edit_price_title">Modifica prezzo</string>
+    <string name="shelf_name_label">Nome scaffale</string>
+    <string name="save_action">Salva</string>
+    <string name="close_action">Chiudi</string>
+    <string name="shelves_empty">Nessuno scaffale presente. Tocca + per aggiungerne uno.</string>
+    <string name="manage_products_action">Gestisci prodotti</string>
+    <string name="rename_action">Rinomina</string>
+    <string name="shelf_products_title">Prodotti su \"%1$s\"</string>
+
+    <string name="add_recipe_title">Aggiungi ricetta</string>
+    <string name="rename_recipe_title">Rinomina ricetta</string>
+    <string name="recipe_name_label">Nome ricetta</string>
+    <string name="recipes_empty">Nessuna ricetta presente. Tocca + per aggiungerne una.</string>
+
+    <string name="week_1">Settimana 1</string>
+    <string name="week_2">Settimana 2</string>
+    <string name="clear_week_action">Svuota settimana</string>
+    <string name="clear_day_action">Svuota giorno</string>
+    <string name="day_empty">Nessuna ricetta per questo giorno.</string>
+    <string name="add_recipe_to_day_title">Aggiungi ricetta al giorno</string>
+
+    <string-array name="day_names">
+        <item>Lunedì</item>
+        <item>Martedì</item>
+        <item>Mercoledì</item>
+        <item>Giovedì</item>
+        <item>Venerdì</item>
+        <item>Sabato</item>
+        <item>Domenica</item>
+    </string-array>
+
+    <string name="export_action">Esporta dati</string>
+    <string name="export_markdown_action">Esporta Markdown</string>
+    <string name="import_action">Importa dati</string>
+    <string name="export_success">Backup salvato con successo.</string>
+    <string name="markdown_export_success">Lista della spesa esportata con successo.</string>
+    <string name="shopping_total">Totale Spesa</string>
+    <string name="info_action">Informazioni</string>
+    <string name="shopping_list_title">Lista della Spesa</string>
+    <string name="price_format">%1$.2f %2$s</string>
+    <string name="item_quantity_price_format">%1$.2f %2$s (%3$d × %4$.2f %2$s)</string>
+    <string name="quantity_prefix">%1$dx </string>
+    <string name="add_to_cart_action">Aggiungi al carrello</string>
+    <string name="add_unit_action">Aggiungi unità</string>
+    <string name="remove_unit_action">Rimuovi unità</string>
+    <string name="import_overwrite_warning">L\'importazione sostituirà TUTTI i dati attuali con il contenuto del file di backup selezionato. L\'operazione non è reversibile. Continuare?</string>
+    <string name="help_title">Aiuto e Info</string>
+    <string name="help_markdown_desc">📄 Esporta Markdown: Salva la lista corrente come file di testo.</string>
+    <string name="help_backup_desc">📥 Backup: Salva una copia completa di tutti i dati.</string>
+    <string name="help_restore_desc">📤 Ripristina: Importa un backup salvato in precedenza.</string>
+    <string name="search_hint">Cerca alimenti&#8230;</string>
+    <string name="search_empty">Nessun alimento corrisponde alla ricerca.</string>
+    <string name="toggle_display_mode">Cambia visualizzazione</string>
+    <string name="clear_action">Pulisci</string>
+    <string name="export_filename">fai_la_spesa_backup.db</string>
+    <string name="export_markdown_filename">lista_della_spesa.md</string>
+
+    <string name="language_action">Lingua</string>
+    <string name="language_dialog_title">Seleziona Lingua</string>
+    <string name="language_system_default">Predefinita di sistema</string>
+    <string name="more_options_action">Altre opzioni</string>
+    <string name="go_to_today_action">Oggi</string>
+
+    <string name="currency_action">Valuta</string>
+    <string name="currency_dialog_title">Seleziona Valuta</string>
+    <string name="currency_auto_default">Predefinita (%1$s)</string>
+
+    <string name="manage_ingredients_action">Gestisci ingredienti</string>
+    <string name="ingredients_title">Ingredienti per \"%1$s\"</string>
+    <string name="add_ingredient_hint">Aggiungi nome ingrediente&#8230;</string>
+    <string name="no_ingredients">Nessun ingrediente aggiunto.</string>
+
+    <string name="pref_auto_add_ingredients">Aggiungi ingredienti ricetta al carrello</string>
+    <string name="add_ingredients_to_cart_title">Aggiungere ingredienti al carrello?</string>
+    <string name="add_ingredients_to_cart_desc">Seleziona gli ingredienti da aggiungere al carrello per %1$s:</string>
+    <string name="skip_action">Salta</string>
+    <string name="project_page_action">Pagina Progetto</string>
+    <string name="app_version_format">Versione %1$s</string>
+</resources>

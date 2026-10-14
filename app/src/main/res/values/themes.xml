@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base platform theme, background/actionbar-less: actual
+         Material3 colors and typography are applied by
+         GroceryRunTheme (Compose) in MainActivity. -->
+    <style name="Theme.GroceryRun" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/surface_light</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+</resources>
