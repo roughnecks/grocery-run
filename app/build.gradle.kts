@@ -20,11 +20,14 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.woodpeckersnest.groceryrun"
+    // Package name of the Kotlin sources and generated R class. Kept equal to applicationId
+    // so that the code and the public identity of the app use the same name.
+    namespace = "space.woodpeckersnest.groceryrun"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.woodpeckersnest.groceryrun"
+        // Public package name, permanent once published. Must match the metadata file name in F-Droid.
+        applicationId = "space.woodpeckersnest.groceryrun"
         minSdk = 28
         targetSdk = 37
         versionCode = 2
