@@ -2,10 +2,21 @@
 // Gradle build configuration for "Grocery Run" Android app.
 // Uses Kotlin 2.0+ + Jetpack Compose + Room, minSdk 28.
 
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.devtools.ksp)
     alias(libs.plugins.kotlin.compose)
+}
+
+// Release signing credentials are read from keystore.properties in the project root.
+// That file contains secrets and must never be committed to Git.
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+val keystoreProperties = Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 }
 
 android {
@@ -20,18 +31,34 @@ android {
         versionName = "1.0"
     }
 
+    signingConfigs {
+        create("release") {
+            // If keystore.properties is missing, the release APK is left unsigned.
+            if (keystorePropertiesFile.exists()) {
+                storeFile = file(keystoreProperties.getProperty("storeFile"))
+                storePassword = keystoreProperties.getProperty("storePassword")
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
-            // Forza l'uso della chiave di debug per la versione release.
-            // Questo permette di installare la release sul dispositivo di test
-            // senza dover creare una vera chiave di produzione (keystore).
-            signingConfig = signingConfigs.getByName("debug")
+            // Sign release builds with the dedicated release key.
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
         }
+    }
+
+    // Exclude dependency metadata from the APK and bundle, required for reproducible builds (F-Droid).
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
     }
 
     compileOptions {
@@ -63,7 +90,7 @@ dependencies {
     // Room Database
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    // KSP genera il codice durante la build
+    // KSP generates code during the build
     ksp(libs.androidx.room.compiler)
 
     // Testing

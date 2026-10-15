@@ -23,6 +23,10 @@ app/build/
 # Local configuration file (contains SDK path) - NEVER COMMIT
 local.properties
 
+# Keys
+keystore.properties
+*.jks
+
 # Log files and crash dumps
 *.log
 
