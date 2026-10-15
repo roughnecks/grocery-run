@@ -1,0 +1,11 @@
+Grocery Run (Fai la Spesa!) is a privacy-first, offline grocery list and weekly meal planner for Android.
+
+All data is stored locally on your device in a Room (SQLite) database. There is no account, no cloud, no analytics, no tracking, no ads, and the app requests no Android permissions.
+
+Features:
+* Shopping cart with a real-time total cost, grouped by shelf
+* Master catalog of food items with shelves, unit prices and search
+* Custom shelves and recipes, with optional ingredient lists linked to the catalog
+* Weekly menu planner that can send selected recipe ingredients to your cart
+* Export your cart as a Markdown file, or backup and restore your full database
+* Available in English, Italian, German, French and Spanish
