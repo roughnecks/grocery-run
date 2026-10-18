@@ -30,8 +30,8 @@ android {
         applicationId = "space.woodpeckersnest.groceryrun"
         minSdk = 28
         targetSdk = 37
-        versionCode = 2
-        versionName = "1.0.1"
+        versionCode = 3
+        versionName = "1.0.2"
     }
 
     signingConfigs {
@@ -48,7 +48,9 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            // Enable R8 to shrink and obfuscate release builds.
+            isMinifyEnabled = true
+            isShrinkResources = true
             // Sign release builds with the dedicated release key.
             signingConfig = signingConfigs.getByName("release")
             proguardFiles(
@@ -105,4 +107,3 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
-
