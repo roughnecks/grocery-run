@@ -100,4 +100,8 @@
     <string name="skip_action">Skip</string>
     <string name="project_page_action">Project Page</string>
     <string name="app_version_format">Version %1$s</string>
+
+    <string name="widget_today_title">Today\'s Menu</string>
+    <string name="widget_no_recipes">No recipes planned for today.</string>
+    <string name="widget_description">Displays today\'s planned recipes from your weekly menu.</string>
 </resources>

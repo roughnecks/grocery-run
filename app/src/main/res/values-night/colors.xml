@@ -3,4 +3,10 @@
     <color name="ic_launcher_background">#1F1B16</color>
     <color name="surface_light">#FFFBF6</color>
     <color name="surface_dark">#1F1B16</color>
+
+    <!-- Widget theme colors -->
+    <color name="widget_bg">#2A241E</color>
+    <color name="widget_text_primary">#F2E9DD</color>
+    <color name="widget_text_secondary">#C0B0A0</color>
+    <color name="widget_accent">#E96A25</color>
 </resources>

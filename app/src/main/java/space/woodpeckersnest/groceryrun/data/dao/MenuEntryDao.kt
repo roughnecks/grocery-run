@@ -10,6 +10,9 @@ interface MenuEntryDao {
     @Query("SELECT * FROM menu_entries WHERE date >= :startDate AND date <= :endDate")
     fun getEntriesInRange(startDate: String, endDate: String): Flow<List<MenuEntry>>
 
+    @Query("SELECT * FROM menu_entries WHERE date = :date")
+    suspend fun getEntriesForDate(date: String): List<MenuEntry>
+
     @Insert
     suspend fun insert(entry: MenuEntry): Long
 

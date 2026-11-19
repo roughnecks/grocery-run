@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_menu_title">Menu</string>
+    <string name="widget_today_column">Oggi</string>
+    <string name="widget_tomorrow_title">Domani</string>
+    <string name="widget_no_recipes_tomorrow">Nessuna ricetta prevista per domani.</string>
+</resources>

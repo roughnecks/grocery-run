@@ -11,6 +11,9 @@ interface RecipeDao {
     @Query("SELECT * FROM recipes ORDER BY name ASC")
     fun getAllRecipes(): Flow<List<Recipe>>
 
+    @Query("SELECT * FROM recipes ORDER BY name ASC")
+    suspend fun getAllRecipesList(): List<Recipe>
+
     @Insert
     suspend fun insert(recipe: Recipe): Long
 

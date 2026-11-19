@@ -33,6 +33,23 @@
             </intent-filter>
         </activity>
 
+        <!-- Home screen widget for Today's Menu -->
+        <receiver
+            android:name=".widget.TodayMenuWidgetProvider"
+            android:exported="true"
+            android:label="@string/widget_today_title">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <!-- Refresh the date shown by the widget at midnight and after clock changes -->
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/today_menu_widget_info" />
+        </receiver>
+
     </application>
 
 </manifest>

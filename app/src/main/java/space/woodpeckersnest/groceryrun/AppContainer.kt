@@ -17,6 +17,6 @@ class AppContainer(context: Context) {
     val foodRepository = FoodRepository(database.foodDao())
     val shelfRepository = ShelfRepository(database.shelfDao())
     val recipeRepository = RecipeRepository(database.recipeDao())
-    val menuRepository = MenuRepository(database.menuEntryDao())
+    val menuRepository = MenuRepository(database.menuEntryDao(), context.applicationContext)
     val userPreferencesRepository = UserPreferencesRepository(context)
 }

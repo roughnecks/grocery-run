@@ -101,4 +101,8 @@
     <string name="skip_action">Omitir</string>
     <string name="project_page_action">Página del proyecto</string>
     <string name="app_version_format">Versión %1$s</string>
+
+    <string name="widget_today_title">Menú de hoy</string>
+    <string name="widget_no_recipes">Sin recetas planificadas para hoy.</string>
+    <string name="widget_description">Muestra las recetas de hoy del menú semanal.</string>
 </resources>

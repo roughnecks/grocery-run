@@ -101,4 +101,8 @@
     <string name="skip_action">Salta</string>
     <string name="project_page_action">Pagina Progetto</string>
     <string name="app_version_format">Versione %1$s</string>
+
+    <string name="widget_today_title">Menu di oggi</string>
+    <string name="widget_no_recipes">Nessun piatto programmato per oggi.</string>
+    <string name="widget_description">Mostra i piatti del giorno dal menu settimanale.</string>
 </resources>
