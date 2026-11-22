@@ -132,6 +132,7 @@ fun RecipesScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun RecipeIngredientsDialog(
     recipe: Recipe,
@@ -139,34 +140,75 @@ private fun RecipeIngredientsDialog(
     onDismiss: () -> Unit
 ) {
     val ingredients by viewModel.currentRecipeIngredients.collectAsStateWithLifecycle()
+    val allFoods by viewModel.allFoods.collectAsStateWithLifecycle()
     var ingredientInputName by remember { mutableStateOf("") }
+    var expanded by remember { mutableStateOf(false) }
+
+    val filteredFoods = remember(ingredientInputName, allFoods, ingredients) {
+        val query = ingredientInputName.trim()
+        if (query.isBlank()) {
+            emptyList()
+        } else {
+            allFoods.filter { food ->
+                food.name.contains(query, ignoreCase = true) &&
+                !ingredients.any { it.id == food.id }
+            }.take(5)
+        }
+    }
 
     AlertDialog(
         onDismissRequest = onDismiss,
         title = { Text(stringResource(R.string.ingredients_title, recipe.name)) },
         text = {
             Column(modifier = Modifier.fillMaxWidth()) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically
+                ExposedDropdownMenuBox(
+                    expanded = expanded && filteredFoods.isNotEmpty(),
+                    onExpandedChange = { expanded = it }
                 ) {
-                    OutlinedTextField(
-                        value = ingredientInputName,
-                        onValueChange = { ingredientInputName = it },
-                        placeholder = { Text(stringResource(R.string.add_ingredient_hint)) },
-                        modifier = Modifier.weight(1f),
-                        singleLine = true
-                    )
-                    IconButton(
-                        onClick = {
-                            if (ingredientInputName.isNotBlank()) {
-                                viewModel.addIngredientByName(recipe.id, ingredientInputName)
-                                ingredientInputName = ""
-                            }
-                        },
-                        enabled = ingredientInputName.isNotBlank()
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Icon(Icons.Default.Add, contentDescription = stringResource(R.string.add_action))
+                        OutlinedTextField(
+                            value = ingredientInputName,
+                            onValueChange = {
+                                ingredientInputName = it
+                                expanded = true
+                            },
+                            placeholder = { Text(stringResource(R.string.add_ingredient_hint)) },
+                            modifier = Modifier
+                                .weight(1f)
+                                .menuAnchor(ExposedDropdownMenuAnchorType.PrimaryEditable, true),
+                            singleLine = true
+                        )
+                        IconButton(
+                            onClick = {
+                                if (ingredientInputName.isNotBlank()) {
+                                    viewModel.addIngredientByName(recipe.id, ingredientInputName)
+                                    ingredientInputName = ""
+                                    expanded = false
+                                }
+                            },
+                            enabled = ingredientInputName.isNotBlank()
+                        ) {
+                            Icon(Icons.Default.Add, contentDescription = stringResource(R.string.add_action))
+                        }
+                    }
+
+                    ExposedDropdownMenu(
+                        expanded = expanded && filteredFoods.isNotEmpty(),
+                        onDismissRequest = { expanded = false }
+                    ) {
+                        filteredFoods.forEach { food ->
+                            DropdownMenuItem(
+                                text = { Text(food.name) },
+                                onClick = {
+                                    viewModel.addIngredientByName(recipe.id, food.name)
+                                    ingredientInputName = ""
+                                    expanded = false
+                                }
+                            )
+                        }
                     }
                 }
 

@@ -31,6 +31,9 @@ class RecipeViewModel(
     val allShelves: StateFlow<List<Shelf>> = shelfRepository.allShelves
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
+    val allFoods: StateFlow<List<Food>> = foodRepository.allFoods
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
     private val _selectedRecipeForIngredients = MutableStateFlow<Recipe?>(null)
     val selectedRecipeForIngredients: StateFlow<Recipe?> = _selectedRecipeForIngredients.asStateFlow()
 
