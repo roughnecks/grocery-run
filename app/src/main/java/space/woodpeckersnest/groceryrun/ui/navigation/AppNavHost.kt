@@ -305,7 +305,19 @@ fun AppNavHost() {
             composable(AppTab.SHOPPING_LIST.route) { ShoppingListScreen() }
             composable(AppTab.SHELVES.route) { ShelvesScreen() }
             composable(AppTab.RECIPES.route) { RecipesScreen() }
-            composable(AppTab.WEEKLY_MENU.route) { WeeklyMenuScreen() }
+            composable(AppTab.WEEKLY_MENU.route) {
+                WeeklyMenuScreen(
+                    onGoToRecipes = {
+                        navController.navigate(AppTab.RECIPES.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    }
+                )
+            }
         }
     }
 

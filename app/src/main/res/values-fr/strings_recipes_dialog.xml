@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="recipes_empty_hint">Aucune recette pour l\'instant. Créez-en une dans l\'onglet Recettes.</string>
+    <string name="go_to_recipes_action">Aller aux recettes</string>
+</resources>

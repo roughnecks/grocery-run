@@ -36,7 +36,8 @@ import java.time.format.DateTimeFormatter
 @Composable
 fun WeeklyMenuScreen(
     menuViewModel: WeeklyMenuViewModel = viewModel(factory = LocalViewModelFactory.current),
-    recipeViewModel: RecipeViewModel = viewModel(factory = LocalViewModelFactory.current)
+    recipeViewModel: RecipeViewModel = viewModel(factory = LocalViewModelFactory.current),
+    onGoToRecipes: () -> Unit = {}
 ) {
     val entriesByDate by menuViewModel.entriesByDate.collectAsStateWithLifecycle()
     val recipes by recipeViewModel.allRecipes.collectAsStateWithLifecycle()
@@ -119,6 +120,10 @@ fun WeeklyMenuScreen(
             onConfirm = { selectedRecipes ->
                 menuViewModel.addRecipesToDay(dateStr, selectedRecipes.map { it.id })
                 dayPickerFor = null
+            },
+            onGoToRecipes = {
+                dayPickerFor = null
+                onGoToRecipes()
             }
         )
     }

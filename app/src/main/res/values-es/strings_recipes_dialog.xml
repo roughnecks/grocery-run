@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="recipes_empty_hint">Todavía no hay recetas. Crea una en la pestaña Recetas.</string>
+    <string name="go_to_recipes_action">Ir a recetas</string>
+</resources>

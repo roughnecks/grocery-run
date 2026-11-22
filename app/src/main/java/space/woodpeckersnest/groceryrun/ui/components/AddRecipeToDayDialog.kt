@@ -16,11 +16,14 @@ import space.woodpeckersnest.groceryrun.data.model.Recipe
 
 // Picker listing every existing recipe with checkboxes for multiple
 // selection.
+// When there are no recipes yet, it explains where to create one and
+// offers a button that opens the Recipes tab.
 @Composable
 fun AddRecipeToDayDialog(
     recipes: List<Recipe>,
     onDismiss: () -> Unit,
-    onConfirm: (List<Recipe>) -> Unit
+    onConfirm: (List<Recipe>) -> Unit,
+    onGoToRecipes: () -> Unit
 ) {
     val selectedRecipes = remember { mutableStateListOf<Recipe>() }
 
@@ -29,7 +32,7 @@ fun AddRecipeToDayDialog(
         title = { Text(stringResource(R.string.add_recipe_to_day_title)) },
         text = {
             if (recipes.isEmpty()) {
-                Text(stringResource(R.string.recipes_empty))
+                Text(stringResource(R.string.recipes_empty_hint))
             } else {
                 LazyColumn(modifier = Modifier.heightIn(max = 400.dp)) {
                     items(recipes, key = { it.id }) { recipe ->
@@ -63,11 +66,17 @@ fun AddRecipeToDayDialog(
             }
         },
         confirmButton = {
-            TextButton(
-                onClick = { onConfirm(selectedRecipes.toList()) },
-                enabled = selectedRecipes.isNotEmpty()
-            ) {
-                Text(stringResource(R.string.add_action))
+            if (recipes.isEmpty()) {
+                TextButton(onClick = onGoToRecipes) {
+                    Text(stringResource(R.string.go_to_recipes_action))
+                }
+            } else {
+                TextButton(
+                    onClick = { onConfirm(selectedRecipes.toList()) },
+                    enabled = selectedRecipes.isNotEmpty()
+                ) {
+                    Text(stringResource(R.string.add_action))
+                }
             }
         },
         dismissButton = {
