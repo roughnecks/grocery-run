@@ -56,8 +56,6 @@ class FoodRepository(private val foodDao: FoodDao) {
         foods.forEach { food ->
             if (!food.inShoppingList) {
                 foodDao.setInShoppingListWithQuantity(food.id, true, 1)
-            } else {
-                foodDao.updateQuantity(food.id, food.quantity + 1)
             }
         }
     }

@@ -121,13 +121,13 @@ class WeeklyMenuViewModel(
                     ingredientsList.addAll(ingredients)
                 }
 
-                // Distinct by food id
-                val distinctIngredients = ingredientsList.distinctBy { it.id }
+                // Distinct by food id, and filter out ingredients already in the shopping list
+                val missingIngredients = ingredientsList.distinctBy { it.id }.filter { !it.inShoppingList }
 
-                if (distinctIngredients.isNotEmpty()) {
+                if (missingIngredients.isNotEmpty()) {
                     _pendingRecipeIngredients.value = PendingRecipeIngredients(
                         recipeNames = recipeNames,
-                        ingredients = distinctIngredients
+                        ingredients = missingIngredients
                     )
                 }
             }
