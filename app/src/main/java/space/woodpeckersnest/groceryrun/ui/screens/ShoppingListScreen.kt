@@ -4,7 +4,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -17,6 +19,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import space.woodpeckersnest.groceryrun.R
 import space.woodpeckersnest.groceryrun.data.model.Food
+import space.woodpeckersnest.groceryrun.ui.viewmodel.FoodViewModel
 import space.woodpeckersnest.groceryrun.ui.viewmodel.LocalViewModelFactory
 import space.woodpeckersnest.groceryrun.ui.viewmodel.ShoppingListViewModel
 
@@ -25,7 +28,8 @@ import space.woodpeckersnest.groceryrun.ui.viewmodel.ShoppingListViewModel
 // from the view after it has been purchased.
 @Composable
 fun ShoppingListScreen(
-    viewModel: ShoppingListViewModel = viewModel(factory = LocalViewModelFactory.current)
+    viewModel: ShoppingListViewModel = viewModel(factory = LocalViewModelFactory.current),
+    foodViewModel: FoodViewModel = viewModel(factory = LocalViewModelFactory.current)
 ) {
     val groups by viewModel.groupedShoppingList.collectAsStateWithLifecycle()
     val totalCost by viewModel.totalCost.collectAsStateWithLifecycle()
@@ -75,9 +79,15 @@ fun ShoppingListScreen(
                 )
             }
         } else {
-            // Optimization: remember the event handler
+            // Optimization: remember event handlers
             val onPurchased = remember(viewModel) {
                 { food: Food -> viewModel.markPurchased(food) }
+            }
+            val onIncrementQuantity = remember(foodViewModel) {
+                { food: Food -> foodViewModel.incrementQuantity(food) }
+            }
+            val onDecrementQuantity = remember(foodViewModel) {
+                { food: Food -> foodViewModel.decrementQuantity(food) }
             }
 
             LazyColumn(
@@ -99,6 +109,8 @@ fun ShoppingListScreen(
                         ShoppingListRow(
                             food = food,
                             currencySymbol = currencySymbol,
+                            onIncrementQuantity = { onIncrementQuantity(food) },
+                            onDecrementQuantity = { onDecrementQuantity(food) },
                             onPurchased = { onPurchased(food) }
                         )
                     }
@@ -137,7 +149,13 @@ private fun ShelfHeader(name: String) {
 }
 
 @Composable
-private fun ShoppingListRow(food: Food, currencySymbol: String, onPurchased: () -> Unit) {
+private fun ShoppingListRow(
+    food: Food,
+    currencySymbol: String,
+    onIncrementQuantity: () -> Unit,
+    onDecrementQuantity: () -> Unit,
+    onPurchased: () -> Unit
+) {
     Row(
         modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp),
         verticalAlignment = Alignment.CenterVertically
@@ -174,6 +192,31 @@ private fun ShoppingListRow(food: Food, currencySymbol: String, onPurchased: () 
                 )
             }
         }
+
+        // Quantity controls (+ and -) in Shopping List
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            if (food.quantity > 1) {
+                IconButton(onClick = onDecrementQuantity) {
+                    Icon(
+                        Icons.Default.Remove,
+                        contentDescription = stringResource(R.string.remove_unit_action)
+                    )
+                }
+            }
+            Text(
+                text = "${food.quantity}",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(horizontal = 4.dp)
+            )
+            IconButton(onClick = onIncrementQuantity) {
+                Icon(
+                    Icons.Default.Add,
+                    contentDescription = stringResource(R.string.add_unit_action)
+                )
+            }
+        }
+
         IconButton(onClick = onPurchased) {
             Icon(Icons.Default.Check, contentDescription = stringResource(R.string.mark_purchased_action))
         }

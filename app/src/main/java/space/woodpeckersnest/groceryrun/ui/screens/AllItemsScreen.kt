@@ -9,7 +9,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Sell
 import androidx.compose.material3.*
@@ -140,8 +139,6 @@ fun AllItemsScreen(
                                 currencySymbol = currencySymbol,
                                 onCheckedChange = { checked -> onCheckedChange(food, checked) },
                                 onPriceChange = { price -> foodViewModel.updatePrice(food, price) },
-                                onIncrementQuantity = { foodViewModel.incrementQuantity(food) },
-                                onDecrementQuantity = { foodViewModel.decrementQuantity(food) },
                                 onDelete = { onDelete(food) }
                             )
                         }
@@ -160,8 +157,6 @@ fun AllItemsScreen(
                                     currencySymbol = currencySymbol,
                                     onCheckedChange = { checked -> onCheckedChange(food, checked) },
                                     onPriceChange = { price -> foodViewModel.updatePrice(food, price) },
-                                    onIncrementQuantity = { foodViewModel.incrementQuantity(food) },
-                                    onDecrementQuantity = { foodViewModel.decrementQuantity(food) },
                                     onDelete = { onDelete(food) }
                                 )
                             }
@@ -217,8 +212,6 @@ private fun FoodRow(
     currencySymbol: String,
     onCheckedChange: (Boolean) -> Unit,
     onPriceChange: (Double) -> Unit,
-    onIncrementQuantity: () -> Unit,
-    onDecrementQuantity: () -> Unit,
     onDelete: () -> Unit
 ) {
     Row(
@@ -281,32 +274,9 @@ private fun FoodRow(
             Icon(Icons.Default.Sell, contentDescription = stringResource(R.string.edit_price_title))
         }
 
-        // Quantity controls
-        if (food.inShoppingList) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                if (food.quantity > 1) {
-                    IconButton(onClick = onDecrementQuantity) {
-                        Icon(
-                            Icons.Default.Remove,
-                            contentDescription = stringResource(R.string.remove_unit_action)
-                        )
-                    }
-                }
-                Text(
-                    text = "${food.quantity}",
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(horizontal = 4.dp)
-                )
-                IconButton(onClick = onIncrementQuantity) {
-                    Icon(
-                        Icons.Default.Add,
-                        contentDescription = stringResource(R.string.add_unit_action)
-                    )
-                }
-            }
-        } else {
-            IconButton(onClick = onIncrementQuantity) {
+        // Quick add button if not in shopping list
+        if (!food.inShoppingList) {
+            IconButton(onClick = { onCheckedChange(true) }) {
                 Icon(
                     Icons.Default.Add,
                     contentDescription = stringResource(R.string.add_to_cart_action)
